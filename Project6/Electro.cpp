@@ -102,7 +102,8 @@ void EWatch::ShowSpec()
 RunTracker::RunTracker(int v1, int v2, int v3) : Device(v2), Appliency(v3), _MaxDistance(v1) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>void RunTracker::ShowSpec()
+//собственная версия функции, определенной в базовом классе <IElectronics>
+void RunTracker::ShowSpec()
 {
 	cout << "Full batery life time is " << _batteryLife / 60 << " hours, " << _batteryLife % 60 << " minutes." << endl;
 	cout << "Device has weight " << _weight << " gramm." << endl;
