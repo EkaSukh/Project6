@@ -3,56 +3,56 @@
 
 using namespace std;
 
-//Базовый класс. Конструктор по умолчанию
+//Р‘Р°Р·РѕРІС‹Р№ РєР»Р°СЃСЃ. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 IElectronics::IElectronics()
 {}
 
-//Дочерний класс.Первый уровень наследования. Конструктор
-Device::Device(int value) : _batteryLife(value) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р”РѕС‡РµСЂРЅРёР№ РєР»Р°СЃСЃ.РџРµСЂРІС‹Р№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+Device::Device(int value) : _batteryLife(value) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ
 void Device::ShowSpec()
 {
 	cout << "Full batery life time is " << _batteryLife/60 << " hours, " << _batteryLife % 60 << " minutes." << endl;
 }
 
-//Дочерний класс.Первый уровень наследования. Конструктор
-Appliency::Appliency(int weight): _weight(weight) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р”РѕС‡РµСЂРЅРёР№ РєР»Р°СЃСЃ.РџРµСЂРІС‹Р№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+Appliency::Appliency(int weight): _weight(weight) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ
 void Appliency::ShowSpec()
 {
 	cout << "Device has weight " << _weight << " gramm."<< endl;
 }
 
-//Дочерний класс.Второй уровень наследования. Конструктор
-PlayerCase::PlayerCase(string clr, int val) : Appliency(val), _color(clr) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р”РѕС‡РµСЂРЅРёР№ РєР»Р°СЃСЃ.Р’С‚РѕСЂРѕР№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+PlayerCase::PlayerCase(string clr, int val) : Appliency(val), _color(clr) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ <IElectronics>
 void PlayerCase::ShowSpec()
 {
 	cout << "Player case has weight " << _weight << " gramm." << endl;
 	cout << "Color of the case is " << _color << endl;
 }
-//Дочерний класс.Второй уровень наследования. Конструктор
-EBookCase::EBookCase(string clr, int val) : Appliency(val), _color(clr) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р”РѕС‡РµСЂРЅРёР№ РєР»Р°СЃСЃ.Р’С‚РѕСЂРѕР№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ. РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ
+EBookCase::EBookCase(string clr, int val) : Appliency(val), _color(clr) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ <IElectronics>
 void EBookCase::ShowSpec()
 {
 	cout << "Electronic book case has weight " << _weight << " gramm." << endl;
 	cout << "Color of the case is " << _color << endl;
 }
 
-//Второй уровень наследования
-PortMixer::PortMixer(int hds, int val) : Device(val), _heads(hds) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р’С‚РѕСЂРѕР№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ
+PortMixer::PortMixer(int hds, int val) : Device(val), _heads(hds) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ <IElectronics>
 void PortMixer::ShowSpec()
 {
 	cout << "Full batery life time is " << _batteryLife / 60 << " hours, " << _batteryLife % 60 << " minutes." << endl;
@@ -60,11 +60,11 @@ void PortMixer::ShowSpec()
 }
 
 
-//Второй уровень наследования, от двух классов
-Player::Player(int v1, int v2, int v3) : Device(v2), Appliency(v3), _totalTracks(v1) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р’С‚РѕСЂРѕР№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ, РѕС‚ РґРІСѓС… РєР»Р°СЃСЃРѕРІ
+Player::Player(int v1, int v2, int v3) : Device(v2), Appliency(v3), _totalTracks(v1) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ <IElectronics>
 void Player::ShowSpec()
 {
 	cout << "Full batery life time is " << _batteryLife / 60 << " hours, " << _batteryLife % 60 << " minutes." << endl;
@@ -72,11 +72,11 @@ void Player::ShowSpec()
 	cout << "Total number of tracks is " << _totalTracks << endl;
 }
 
-//Второй уровень наследования, от двух классов
-EBook::EBook(int v1, int v2, int v3) : Device(v2), Appliency(v3), _bookMem(v1) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р’С‚РѕСЂРѕР№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ, РѕС‚ РґРІСѓС… РєР»Р°СЃСЃРѕРІ
+EBook::EBook(int v1, int v2, int v3) : Device(v2), Appliency(v3), _bookMem(v1) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ <IElectronics>
 void EBook::ShowSpec()
 {
 	cout << "Full batery life time is " << _batteryLife / 60 << " hours, " << _batteryLife % 60 << " minutes." << endl;
@@ -85,11 +85,11 @@ void EBook::ShowSpec()
 
 }
 
-//Второй уровень наследования, от двух классов
-EWatch::EWatch(int v1, int v2, int v3) : Device(v2), Appliency(v3), _Nregims(v1) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р’С‚РѕСЂРѕР№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ, РѕС‚ РґРІСѓС… РєР»Р°СЃСЃРѕРІ
+EWatch::EWatch(int v1, int v2, int v3) : Device(v2), Appliency(v3), _Nregims(v1) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ <IElectronics>
 void EWatch::ShowSpec()
 {
 	cout << "Full batery life time is " << _batteryLife / 60 << " hours, " << _batteryLife % 60 << " minutes." << endl;
@@ -98,11 +98,11 @@ void EWatch::ShowSpec()
 
 }
 
-//Второй уровень наследования, от двух классов
-RunTracker::RunTracker(int v1, int v2, int v3) : Device(v2), Appliency(v3), _MaxDistance(v1) //для базового класса <IElectronics> будет вызван конструктор по умолчанию
+//Р’С‚РѕСЂРѕР№ СѓСЂРѕРІРµРЅСЊ РЅР°СЃР»РµРґРѕРІР°РЅРёСЏ, РѕС‚ РґРІСѓС… РєР»Р°СЃСЃРѕРІ
+RunTracker::RunTracker(int v1, int v2, int v3) : Device(v2), Appliency(v3), _MaxDistance(v1) //РґР»СЏ Р±Р°Р·РѕРІРѕРіРѕ РєР»Р°СЃСЃР° <IElectronics> Р±СѓРґРµС‚ РІС‹Р·РІР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
 {}
 
-//собственная версия функции, определенной в базовом классе <IElectronics>void RunTracker::ShowSpec()
+//СЃРѕР±СЃС‚РІРµРЅРЅР°СЏ РІРµСЂСЃРёСЏ С„СѓРЅРєС†РёРё, РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІ Р±Р°Р·РѕРІРѕРј РєР»Р°СЃСЃРµ <IElectronics>void RunTracker::ShowSpec()
 {
 	cout << "Full batery life time is " << _batteryLife / 60 << " hours, " << _batteryLife % 60 << " minutes." << endl;
 	cout << "Device has weight " << _weight << " gramm." << endl;
